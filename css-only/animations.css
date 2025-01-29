@@ -1,0 +1,146 @@
+[css-anim] {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[css-anim^="slide-up"] {
+  transform: translateY(1.5rem);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[css-anim="slide-up"],
+[css-anim="slide-up-100"],
+[css-anim="slide-up-200"],
+[css-anim="slide-up-300"],
+[css-anim="slide-up-400"],
+[css-anim="slide-up-500"],
+[css-anim="slide-up-600"],
+[css-anim="slide-up-700"] {
+  animation: slideUp 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+
+[css-anim="slide-up-100"] {
+  animation-delay: 100ms;
+}
+[css-anim="slide-up-200"] {
+  animation-delay: 200ms;
+}
+[css-anim="slide-up-300"] {
+  animation-delay: 300ms;
+}
+[css-anim="slide-up-400"] {
+  animation-delay: 400ms;
+}
+[css-anim="slide-up-500"] {
+  animation-delay: 500ms;
+}
+[css-anim="slide-up-600"] {
+  animation-delay: 600ms;
+}
+[css-anim="slide-up-700"] {
+  animation-delay: 700ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[css-anim="fade-in"],
+[css-anim="fade-in-100"],
+[css-anim="fade-in-200"],
+[css-anim="fade-in-300"],
+[css-anim="fade-in-400"],
+[css-anim="fade-in-500"],
+[css-anim="fade-in-600"],
+[css-anim="fade-in-700"] {
+  animation: fadeIn 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+
+[css-anim="fade-in-100"] {
+  animation-delay: 100ms;
+}
+[css-anim="fade-in-200"] {
+  animation-delay: 200ms;
+}
+[css-anim="fade-in-300"] {
+  animation-delay: 300ms;
+}
+[css-anim="fade-in-400"] {
+  animation-delay: 400ms;
+}
+[css-anim="fade-in-500"] {
+  animation-delay: 500ms;
+}
+[css-anim="fade-in-600"] {
+  animation-delay: 600ms;
+}
+[css-anim="fade-in-700"] {
+  animation-delay: 700ms;
+}
+
+@keyframes flip {
+  from {
+    transform: perspective(400px) rotateX(-180deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(400px) rotateX(0);
+    opacity: 1;
+  }
+}
+
+[css-anim="flip"],
+[css-anim="flip-100"],
+[css-anim="flip-200"],
+[css-anim="flip-300"],
+[css-anim="flip-400"],
+[css-anim="flip-500"],
+[css-anim="flip-600"],
+[css-anim="flip-700"] {
+  animation: flip 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+[css-anim="flip-100"] {
+  animation-delay: 100ms;
+}
+
+[css-anim="flip-200"] {
+  animation-delay: 200ms;
+}
+
+[css-anim="flip-300"] {
+  animation-delay: 300ms;
+}
+
+[css-anim="flip-400"] {
+  animation-delay: 400ms;
+}
+
+[css-anim="flip-500"] {
+  animation-delay: 500ms;
+}
+
+[css-anim="flip-600"] {
+  animation-delay: 600ms;
+}
+
+[css-anim="flip-700"] {
+  animation-delay: 700ms;
+}
