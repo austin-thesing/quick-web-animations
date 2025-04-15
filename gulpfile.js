@@ -4,6 +4,7 @@ import cleanCSS from "gulp-clean-css";
 import terser from "gulp-terser";
 import gulpIf from "gulp-if";
 import { deleteAsync } from "del";
+import flatten from "gulp-flatten";
 
 // Define target files for processing, excluding generated and configuration files
 const srcFiles = ["**/*.css", "**/*.js", "!**/*.min.*", "!node_modules/**", "!dist/**", "!gulpfile.js", "!.prettierrc", "!.prettierignore", "!package.json", "!bun.lockb"];
@@ -20,6 +21,7 @@ function minify() {
     .pipe(gulpIf("*.css", cleanCSS()))
     .pipe(gulpIf("*.js", terser()))
     .pipe(rename({ suffix: ".min" }))
+    .pipe(flatten())
     .pipe(gulp.dest("./dist"));
 }
 
