@@ -173,13 +173,13 @@ You can use these files directly from JSDelivr:
 **JavaScript:**
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/anim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/dxd-anim.min.js"></script>
 ```
 
 **CSS:**
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/anim-states.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/dxd-anim.min.css" />
 ```
 
 ## Development

@@ -7,7 +7,7 @@ Simple, reusable CSS animations using custom attributes.
 1. Include the CSS file in your project:
 
    ```html
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/css-only/css-anim.min.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/dxd-css-anim.min.css" />
    ```
 
 2. Add the `css-anim` attribute to elements you want to animate.
