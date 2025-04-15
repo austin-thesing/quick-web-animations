@@ -9,9 +9,7 @@ This library provides two animation systems:
 1. GSAP Animations - JavaScript-powered, scroll-triggered animations
 2. CSS-only Animations - Pure CSS animations for instant loading
 
-## Setup
-
-### Prerequisites
+## Installation
 
 1. **Add GSAP to your project**
 
@@ -23,35 +21,19 @@ This library provides two animation systems:
 
    _Note for Webflow users: Add this in Project Settings > Custom Code > Footer Code_
 
-2. **Add initial animation states**
+2. **Add Quick Web Animations via CDN**
 
-   Add this CSS to your stylesheet or in a `<style>` tag in the `<head>` of your HTML:
+   **JavaScript:**
 
    ```html
-   <style>
-     [anim="fade-in"] {
-       opacity: 0;
-     }
-     [anim="slide-up"] {
-       opacity: 0;
-       transform: translateY(2rem);
-     }
-     [anim="slide-down"] {
-       opacity: 0;
-       transform: translateY(-2rem);
-     }
-     [anim="slide-left"] {
-       opacity: 0;
-       transform: translateX(-2rem);
-     }
-     [anim="slide-right"] {
-       opacity: 0;
-       transform: translateX(2rem);
-     }
-     [anim] {
-       will-change: transform, opacity;
-     }
-   </style>
+   <script src="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/dxd-anim.min.js"></script>
+   ```
+
+   **CSS (prevents flicker/double fire of JS animations):**
+   _Note: Add this CSS link in the <head> of your project._
+
+   ```html
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/dxd-anim.min.css" />
    ```
 
    _Note for Webflow users: Add this in Project Settings > Custom Code > Head Code_
@@ -120,19 +102,36 @@ The CSS-only animation system (`css-anim`) is specifically designed for hero sec
 - Use minimal system resources
 - Work even if JavaScript fails to load
 
-**`css-anim`** (required)
+**You can use the CSS-only system by itself, without any JavaScript or GSAP.**
 
-- Specifies which animation to use
-- Available animations:
-  - `fade-in`: Fades element in
-  - `slide-up`: Slides up while fading in
-  - `flip`: Flips element in
+#### Standalone CSS-only CDN
 
-**Built-in Delays**
+If you only want CSS-only animations, use this CDN link:
 
-- Add delay suffix to animation name
-- Available delays: 100ms to 700ms in 100ms increments
-- Example: `slide-up-300` for 300ms delay
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/dxd-css-anim.min.css" />
+```
+
+_Note: Add this CSS link in the <head> of your project._
+
+#### Available Animations
+
+- Slide Up: `css-anim="slide-up"`
+- Slide Down: `css-anim="slide-down"`
+- Slide Left: `css-anim="slide-left"`
+- Slide Right: `css-anim="slide-right"`
+- Fade In: `css-anim="fade-in"`
+- Flip: `css-anim="flip"`
+
+#### Delayed Animations
+
+Add a delay by appending a dash and the delay in milliseconds (100–700ms, in 100ms increments):
+
+- `css-anim="slide-up-300"` (300ms delay)
+- `css-anim="fade-in-500"` (500ms delay)
+- `css-anim="flip-200"` (200ms delay)
+
+_Delays available: 100, 200, 300, 400, 500, 600, 700 (ms)_
 
 #### Example Usage
 
@@ -145,6 +144,9 @@ The CSS-only animation system (`css-anim`) is specifically designed for hero sec
 
 <!-- Flip animation with delay -->
 <div css-anim="flip-500">I'll flip in after 500ms</div>
+
+<!-- Slide left with delay -->
+<div css-anim="slide-left-200">I'll slide in from the left after 200ms</div>
 ```
 
 ### Using Both Systems Together
@@ -164,42 +166,24 @@ Choose between them based on your needs:
 - Use `anim` for scroll-triggered animations with more control
 - Use `css-anim` for instant animations in hero sections or above the fold
 
-## Installation
+## Development Prerequisites
 
-### CDN Links
+To modify or contribute to this project, set up your local development environment:
 
-You can use these files directly from JSDelivr:
+- Install [Bun](https://bun.sh): `curl -fsSL https://bun.sh/install | bash`
+- Install dependencies:
 
-**JavaScript:**
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/dxd-anim.min.js"></script>
-```
-
-**CSS:**
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/austin-thesing/quick-web-animations@latest/dist/dxd-anim.min.css" />
-```
+  ```bash
+  bun install
+  ```
 
 ## Development
 
-### Local Setup
+### Commands
 
-1. **Prerequisites**
-
-   - Install [Bun](https://bun.sh): `curl -fsSL https://bun.sh/install | bash`
-
-2. **Install Dependencies**
-
-   ```bash
-   bun install
-   ```
-
-3. **Development Commands**
-   - `bun run dev` - Start development mode with auto-minification on file changes
-   - `bun run build` - Build minified files once
-   - `bun run clean` - Clean the dist folder
+- `bun run dev` - Start development mode with auto-minification on file changes
+- `bun run build` - Build minified files once
+- `bun run clean` - Clean the dist folder
 
 ### VS Code Integration
 
@@ -213,5 +197,6 @@ The project includes VS Code/Cursor/Windsurf settings that will automatically:
 
 When you run the build command or save files in development mode, minified files are automatically generated in the `dist` folder:
 
-- `anim.min.js` - Minified JavaScript
-- `anim-states.min.css` - Minified CSS
+- `dxd-anim.min.js` – Minified JavaScript for scroll/GSAP animations.
+- `dxd-anim.min.css` – Minified CSS for initial states of JS animations (prevents flicker/double fire).
+- `dxd-css-anim.min.css` – Minified CSS for standalone CSS-only animations.
